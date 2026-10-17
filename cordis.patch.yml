@@ -1,0 +1,15 @@
+# dsh-whale-dive profile patch layer.
+#
+# One effect only: insert this package's loader row into the HOST composition.
+# The plugin registers ten model-facing tools through `ctx.tools`, and owns no
+# client-side UI, so there is nothing else for this layer to touch — the base
+# rows (`web`, `tools`, `systemPrompt`) all stay exactly as dsh-base composed
+# them.
+#
+# The plugin is fully self-contained: it talks to Bilibili over plain HTTPS and
+# to Douyin through a locally launched Edge instance over the DevTools
+# protocol. It registers no search provider, replaces no base row config, and
+# therefore cannot collide with another provider-selecting patch layer.
+- insert:
+    - id: whale-dive
+      name: 'dsh-whale-dive'

@@ -1,0 +1,67 @@
+{
+  "name": "dsh-whale-dive",
+  "version": "0.1.0",
+  "description": "Bilibili and Douyin content retrieval tools for DeepSeek Harness: signed Bilibili API access behind a request pacer, plus Douyin pages rendered through a real Edge browser over CDP.",
+  "license": "MIT",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nisew2/dsh-whale-dive.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nisew2/dsh-whale-dive/issues"
+  },
+  "homepage": "https://github.com/nisew2/dsh-whale-dive#readme",
+  "author": "nisew2",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./package.json": "./package.json",
+    "./cordis.patch.yml": "./cordis.patch.yml"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/limiter.js",
+    "lib/wbi.js",
+    "lib/http.js",
+    "lib/bili.js",
+    "lib/douyin.js",
+    "lib/tools.js",
+    "lib/types",
+    "cordis.patch.yml",
+    "README.md",
+    "README.zh.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-tools": ">=0.2.0-rc.1 <0.3.0-0",
+    "@deepseek-ai/schemastery": "^3.18.2"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "plugin",
+    "bilibili",
+    "bili",
+    "douyin",
+    "danmaku",
+    "subtitle",
+    "cdp",
+    "wbi"
+  ]
+}
